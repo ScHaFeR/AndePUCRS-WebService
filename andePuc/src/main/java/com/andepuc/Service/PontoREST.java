@@ -37,6 +37,14 @@ public class PontoREST extends AbstractFacade<Ponto> {
     @Override
     @Consumes({ "application/json"})
     public void create(Ponto entity) {
+        
+        if(entity.getNroIntPonto() != null){
+            if(super.find(entity.getNroIntPonto()) != null){
+                super.edit(entity);
+                return;
+            }
+        }
+        
         super.create(entity);
     }
 

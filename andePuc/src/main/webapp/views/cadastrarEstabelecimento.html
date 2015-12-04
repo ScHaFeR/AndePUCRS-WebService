@@ -21,32 +21,48 @@
         <title>AndePuc</title>
     </head>
     <body ng-controller="estabelecimentoCadastroCtrl">
+        <nav class="light-blue lighten-1" role="navigation">
+            <div class="nav-wrapper"><a href="#" class="brand-logo center">AndePucrs</a></div>
+        </nav>
         <div class="container">
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s3">
                   <input id="nome" type="text" class="validate" ng-model="Estabelecimento.nome">
                   <label for="nome">Nome</label>
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s9">
                   <input id="descricao" type="text" class="validate" ng-model="Estabelecimento.descricao">
                   <label for="descricao">Descricao</label>
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s4">
+                    <a id="dropdownTpEst" class='dropdown-button btn blue col s12' href='#!' data-activates='dropdown2'>{{tp.descricao}}</a>
+                    
+                    <ul id='dropdown2' class='dropdown-content col s12' ng-init='inicializaDropDown()' style="max-height:auto; max-width:auto; 
+                        min-width: 100%;">
+                        <li ng-repeat="tpEst in listaTpEst"><a href="#!" ng-click="selecionaOpcao(tpEst)">{{tpEst.descricao}}</a></li>
+                    </ul>
+                </div>
+                <div class="input-field col s4">
                   <input id="latitude" type="text" class="validate" ng-model="Estabelecimento.latitude">
                   <label for="latitude">Latitude</label>
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s4">
                   <input id="longitude" type="text" class="validate" ng-model="Estabelecimento.longitude">
                   <label for="longitude">Longitude</label>
                 </div>
-                <div class="input-field col s12">
-                  <input id="idTpEstabelecimento" type="text" class="validate" ng-model="Estabelecimento.idTpEstabelecimento">
-                  <label for="idTpEstabelecimento">TpEstabelecimento</label>
-                </div>
+                <div class="input-field col s12"></div>
+                <div class="input-field col s12"></div>
                 <div class="center-align">
                     <button type="button" ng-click="salvar()" class="btn btn-default">Cadastrar</button>
                 </div>
            </div>
       </div>
+        <footer class="page-footer grey">
+                <div class="container">
+                    <div class="row">
+                        <h6 class="white-text center-align">Made by lol's company</h6>
+                    </div>
+                </div>
+        </footer>
     </body>
 </html>

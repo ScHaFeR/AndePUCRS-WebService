@@ -56,6 +56,8 @@ public class Ponto implements Serializable {
     private Double latitude;
     @Column(name = "LONGITUDE")
     private Double longitude;
+    @Column(name = "VALOR")
+    private Integer valor;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "ponto")
     private List<PontoUsuario> pontoUsuarioList;
     @JoinColumn(name = "NRO_INT_PREF", referencedColumnName = "NRO_INT_PREF")
@@ -124,6 +126,14 @@ public class Ponto implements Serializable {
 
     public void setNroIntPref(Preferencias nroIntPref) {
         this.nroIntPref = nroIntPref;
+    }
+    
+    public Integer getValor() {
+        return valor;
+    }
+
+    public void setValor(Integer valor) {
+        this.valor = valor;
     }
 
     @Override

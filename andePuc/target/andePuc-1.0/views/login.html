@@ -1,0 +1,50 @@
+<html ng-app="loginCtrl">
+    <head>      
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="../js/lib/materialize.js"></script>
+        <script src="../js/lib/init.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
+        <script type="text/javascript" src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+
+        <script src="../js/lib/angular-resource.js"></script>
+        <script src="../js/controllers/loginController.js"></script>
+        <script src="../js/app.js"></script>
+
+        <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+        <!-- Mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+        <title>AndePuc</title>
+    </head>
+    <body ng-controller="loginCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col s4 left"></div>
+                <div class="col s4">
+                  <div class="card white">
+                    <div class="card-content center thin">
+                        <span class="card-title blue-text">AndePucrs</span>
+                        <div class="input-field col s12">
+                          <input id="email" type="text" class="validate" ng-model="Usuario.email">
+                          <label for="email">E-mail</label>
+                        </div>
+                        <div class="input-field col s12">
+                          <input id="password" type="password" class="validate" ng-model="Usuario.hashSenha">
+                          <label for="password">Senha</label>
+                        </div>
+                    </div>
+                    <div class="card-action center">
+                      <button type="button" ng-click="login()" class="btn btn-default blue">login</button>
+                      <br />
+                      <a href="../views/recuperar-senha.html"><h6>Esqueci a minha senha</h6></a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

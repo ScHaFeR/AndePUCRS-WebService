@@ -38,10 +38,6 @@ public class EstabelecimentosREST extends AbstractFacade<Estabelecimentos> {
     @Override
     @Consumes({ "application/json"})
     public void create(Estabelecimentos entity) {
-        TipoEstabelecimento te = new TipoEstabelecimento();
-        te.setNroIntTipoEstabelecimento(entity.getIdTpEstabelecimento());
-        
-        entity.setNroIntTipoEstabelecimento(te);
         super.create(entity);
     }
 

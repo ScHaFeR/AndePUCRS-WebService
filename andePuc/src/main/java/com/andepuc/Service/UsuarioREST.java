@@ -36,7 +36,7 @@ public class UsuarioREST extends AbstractFacade<Usuario> {
 
     @POST
     @Override
-    @Consumes({ "application/json"})
+    @Consumes({"application/json"})
     public void create(Usuario entity) {
         TipoUsuario tu = new TipoUsuario();
         tu.setNroIntTipoUsuario(2);
@@ -64,7 +64,7 @@ public class UsuarioREST extends AbstractFacade<Usuario> {
     public Usuario find(@PathParam("id") Integer id) {
         return super.find(id);
     }
-
+    
     @GET
     @Override
     @Produces({ "application/json"})

@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.andePuc</groupId>
-    <artifactId>andePuc</artifactId>
+    <artifactId>andePUCRS</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>andePuc</name>
+    <name>andePUCRS</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

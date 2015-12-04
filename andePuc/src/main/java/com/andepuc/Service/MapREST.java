@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.andepuc.Service;
 
 import com.andepuc.Entity.Map;
@@ -22,7 +21,7 @@ import javax.ws.rs.Produces;
 
 /**
  *
- * @author ScHaFeR
+ * @author Luis
  */
 @Stateless
 @Path("com.andepuc.map")

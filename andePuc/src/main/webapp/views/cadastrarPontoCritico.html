@@ -1,48 +1,73 @@
-<html ng-app="usuarioCadastroCtrl">
+<html ng-app="pontoCriticoCadastroCtrl">
     <head>      
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
                 
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="js/lib/materialize.js"></script>
-        <script src="js/lib/init.js"></script>
+        <script src="../js/lib/materialize.js"></script>
+        <script src="../js/lib/init.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
         <script type="text/javascript" src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
 
-        <script src="js/lib/angular-resource.js"></script>
-        <script src="js/controllers/usuarioCadastroController.js"></script>
-        <script src="js/app.js"></script>
+        <script src="../js/lib/angular-resource.js"></script>
+        <script src="../js/controllers/pontoCriticoCadastroController.js"></script>
+        <script src="../js/app.js"></script>
 
-        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
         <!-- Mobile -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 
         <title>AndePuc</title>
     </head>
-    <body ng-controller="usuarioCadastroCtrl">
+    <body ng-controller="pontoCriticoCadastroCtrl">
+        <nav class="light-blue lighten-1" role="navigation">
+            <div class="nav-wrapper"><a href="#" class="brand-logo center">AndePucrs</a></div>
+        </nav>
         <div class="container">
             <div class="row">
-                <div class="input-field col s12">
-                  <input id="nome" type="text" class="validate" ng-model="Usuario.nome">
-                  <label for="nome">Nome</label>
+                <div class="input-field col s6">
+                  <input id="descricao" type="text" class="validate" ng-model="PontoCritico.descricao">
+                  <label for="descricao">Descricao</label>
                 </div>
-                <div class="input-field col s12">
-                  <input id="email" type="text" class="validate" ng-model="Usuario.email">
-                  <label for="email">E-mail</label>
+                <div class="input-field col s3">
+                  <input id="status" type="text" class="validate" ng-model="PontoCritico.status">
+                  <label for="status">Status</label>
                 </div>
-                <div class="input-field col s12">
-                  <input id="password" type="password" class="validate" ng-model="Usuario.hashSenha">
-                  <label for="password">Senha</label>
+                <div class="input-field col s3">
+                  <input id="valor" type="text" class="validate" ng-model="PontoCritico.valor">
+                  <label for="valor">Valor</label>
                 </div>
-                <div class="input-field col s12">
-                  <input id="password1" type="password" class="validate" ng-model="confSenha">
-                  <label for="password1">Confirmar senha</label>
+                <div class="input-field col s4">
+                  <a id="dropdownClasse" class='dropdown-button btn blue col s12' href='#!' data-activates='dropdown2'>{{classe.nome}}</a>
+                    
+                  <ul id='dropdown2' class='dropdown-content col s12' ng-init='inicializaDropDown()' style="max-height:auto; max-width:auto; 
+                        min-width: 100%;">
+                        <li ng-repeat="classe in listaClasse"><a href="#!" ng-click="selecionaOpcao(classe)">{{classe.nome}}</a></li>
+                  </ul>
                 </div>
+                <div class="input-field col s4">
+                  <input id="latitude" type="text" class="validate" ng-model="PontoCritico.latitude">
+                  <label for="latitude">Latitude</label>
+                </div>
+                <div class="input-field col s4">  
+                  <input id="longitude" type="text" class="validate" ng-model="PontoCritico.longitude">
+                  <label for="longitude">Longitude</label>
+                </div>
+                <br/><br/>
+                <div class="input-field col s12"></div>
+                <div class="input-field col s12"></div>
                 <div class="center-align">
                     <button type="button" ng-click="salvar()" class="btn btn-default">Cadastrar</button>
                 </div>
            </div>
       </div>
+        <footer class="page-footer grey">
+                <div class="container">
+                    <div class="row">
+                        <h6 class="white-text center-align">Made by lol's company</h6>
+                    </div>
+                </div>
+        </footer>
     </body>
 </html>

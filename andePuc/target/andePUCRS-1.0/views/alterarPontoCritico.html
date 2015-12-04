@@ -1,0 +1,48 @@
+<html ng-app="pontoCriticoViewCtrl">
+    <head>      
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="../js/lib/materialize.js"></script>
+        <script src="../js/lib/init.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
+        <script type="text/javascript" src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+
+        <script src="../js/lib/angular-resource.js"></script>
+        <script src="../js/controllers/pontoCriticoViewController.js"></script>
+        <script src="../js/app.js"></script>
+
+        <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+        <!-- Mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+        <title>AndePuc</title>
+    </head>
+    <body ng-controller="pontoCriticoViewCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="input-field col s12">
+                  <input id="descricao" type="text" class="validate" ng-model="ponto.descricao">
+                  <label for="descricao">Descricao</label>
+                </div>
+                <div class="input-field col s12">
+                  <input id="status" type="text" class="validate" ng-model="ponto.status">
+                  <label for="status">Status</label>
+                </div>
+                <div class="input-field col s12">
+                  <input id="latitude" type="text" class="validate" ng-model="ponto.latitude">
+                  <label for="latitude">Latitude</label>
+                </div>
+                <div class="input-field col s12">
+                  <input id="longitude" type="text" class="validate" ng-model="ponto.longitude">
+                  <label for="longitude">Longitude</label>
+                </div>
+                <div class="center-align">
+                    <button type="button" ng-click="alterar()" class="btn btn-default">Revisar</button>
+                </div>
+           </div>
+      </div>
+    </body>
+</html>

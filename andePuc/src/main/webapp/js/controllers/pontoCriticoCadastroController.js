@@ -1,24 +1,40 @@
-    var usuarioCadastroCtrl = angular.module('usuarioCadastroCtrl', ['ngResource']);
+    var pontoCriticoCadastroCtrl = angular.module('pontoCriticoCadastroCtrl', ['ngResource']);
 
-    usuarioCadastroCtrl.controller('usuarioCadastroCtrl', ['$scope', '$http', function ($scope, $http) {
-            $scope.Usuario = {};
+    pontoCriticoCadastroCtrl.controller('pontoCriticoCadastroCtrl', ['$scope', '$http', function ($scope, $http) {
+            $scope.PontoCritico = {};
             
-            $scope.confSenha;
+            $scope.classe = {nome:"Classe"};
+            $scope.listaClasse = [];
+            $scope.inicializaDropDown = function() {
+                angular.element('#dropdownTpEst a.dropdown-button').dropdown({constrain_width: false, belowOrigin: true});
+                
+                $http.get("../webresources/com.andepuc.preferencias").success(function (data, status){
+                    $scope.listaClasse = data;
+                });
+            }
             
+            $scope.selecionaOpcao = function(classe){
+                $scope.classe = classe;
+                console.log($scope.classe);
+            }
+           
             $scope.salvar = function(){
                 
-                if($scope.Usuario.nome == null || $scope.Usuario.email == null || $scope.Usuario.hashSenha == null){
+                if($scope.PontoCritico.descricao == null || $scope.PontoCritico.status == null || $scope.PontoCritico.latitude == null
+                        || $scope.PontoCritico.longitude == null){
                     alert('Preencha todos os campos!');
                     return;
                 }
                 
-                if($scope.confSenha !=  $scope.Usuario.hashSenha){
-                    alert('As senhas divergem!');
+                if($scope.classe.nroIntPref == null){
+                    alert('Selecione uma classe para o ponto');
                     return;
                 }
-               
-                $scope.Usuario.nroIntUsuario = "";
-                $http.post("webresources/com.andepuc.usuario", $scope.Usuario).success(function (data){
+                
+                $scope.PontoCritico.nroIntPref = $scope.classe;
+                
+                //$scope.PontoCritico.nroIntPonto = "";
+                $http.post("../webresources/com.andepuc.ponto", $scope.PontoCritico).success(function (data){
                         alert('Cadastrado com sucesso');
                         window.location.href="../";
                 }).error(function(data, status){

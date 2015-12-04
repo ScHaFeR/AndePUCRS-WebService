@@ -57,6 +57,8 @@ public class Comentario implements Serializable {
     @JoinColumn(name = "NRO_INT_USUARIO", referencedColumnName = "NRO_INT_USUARIO")
     @ManyToOne
     private Usuario nroIntUsuario;
+    @Column(name = "VALOR")
+    private int valor;
 
     public Comentario() {
     }
@@ -119,6 +121,14 @@ public class Comentario implements Serializable {
 
     public void setNroIntUsuario(Usuario nroIntUsuario) {
         this.nroIntUsuario = nroIntUsuario;
+    }
+    
+    public int getValor(){
+        return valor;
+    }
+    
+    public void setValor(int valor){
+        this.valor = valor;
     }
 
     @Override

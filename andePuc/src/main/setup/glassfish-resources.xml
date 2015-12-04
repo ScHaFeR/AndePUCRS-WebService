@@ -11,5 +11,5 @@
         <property name="driverClass" value="org.apache.derby.jdbc.ClientDriver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="andePucDataBase" object-type="user" pool-name="derby_net_andePucBD_admPool"/>
-    <jdbc-resource enabled="true" jndi-name="andePUCDB-Final" object-type="user" pool-name="derby_net_andePucBD_admPool"/>
+    <jdbc-resource enabled="true" jndi-name="andePucDB" object-type="user" pool-name="derby_net_andePucBD_admPool"/>
 </resources>

@@ -1,0 +1,59 @@
+<html ng-app="classePontoCriticoViewCtrl">
+    <head>      
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="../js/lib/materialize.js"></script>
+        <script src="../js/lib/init.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
+        <script type="text/javascript" src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+
+        <script src="../js/lib/angular-resource.js"></script>
+        <script src="../js/controllers/classePontoCriticoViewController.js"></script>
+        <script src="../js/app.js"></script>
+
+        <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+        <!-- Mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+        <title>AndePuc</title>
+    </head>
+    <body ng-controller="classePontoCriticoViewCtrl">
+        <nav class="light-blue lighten-1" role="navigation">
+            <div class="nav-wrapper"><a href="#" class="brand-logo center">AndePucrs</a></div>
+        </nav>
+        <div class="container" ng-init="carregarClassesPontosCriticos()">
+            <br />
+            <a class="btn-floating btn-large waves-effect waves-light blue"
+               ng-href="cadastrarClassePontoCritico.html">+</a>
+            <br/>
+            <div class="row">
+                <table class="responsive-table hoverable bordered">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Status</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="classePontoCritico in classes | orderBy: 'nome'">    
+                                <td>{{classePontoCritico.nome}}</td>
+                                <td>{{classePontoCritico.status}} </td>
+                                <td>{{classePontoCritico.valor}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+           </div>
+      </div>
+        <footer class="page-footer grey">
+                <div class="container">
+                    <div class="row">
+                        <h6 class="white-text center-align">Made by lol's company</h6>
+                    </div>
+                </div>
+        </footer>
+    </body>
+</html>

@@ -2,7 +2,6 @@ com\andepuc\Entity\Comentario.class
 com\andepuc\Service\ComentarioREST.class
 com\andepuc\Entity\Usuario.class
 com\andepuc\Service\PreferenciasREST.class
-com\andepuc\WS\ApplicationConfig.class
 com\andepuc\Entity\Preferencias_.class
 com\andepuc\Entity\Map_.class
 com\andepuc\Service\TipoUsuarioREST.class
@@ -17,6 +16,7 @@ com\andepuc\Entity\PontoUsuarioPK.class
 com\andepuc\Entity\PontoUsuario.class
 com\andepuc\Entity\Comentario_.class
 com\andepuc\Service\PontoREST.class
+com\andepuc\Service\ApplicationConfig.class
 com\andepuc\Service\AbstractFacade.class
 com\andepuc\Service\AdminREST.class
 com\andepuc\Entity\TipoEstabelecimento_.class
